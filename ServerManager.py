@@ -4,7 +4,6 @@ import json
 import shutil
 from datetime import datetime
 import subprocess
-subprocess.Popen(["python", "updater.py"])
 
 # === Dynamic Root Path ===
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,6 +12,9 @@ data_dir = os.path.join(base_dir, "Data")
 servers_dir = os.path.join(base_dir, "Servers")
 backups_dir = os.path.join(base_dir, "Backups")
 config_path = os.path.join(data_dir, "defaults.json")
+updater_dir = os.path.join(data_dir, "updater.py")
+
+subprocess.Popen(["python", updater_dir])
 
 # === Ensure Config Exists ===
 default_config = {
